@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyActivity"
+    android:background="#FFFFFF"  >
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#CDCDCD"
+        android:id="@+id/RLlayout1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:text="@string/app_name" />
+
+        <Button
+            android:id="@+id/showMemory"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/shareimg"
+            android:onClick="btonclik" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/RLlayout1"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/guide1"
+        android:id="@+id/RLlayout2">
+
+        <TextView
+            android:id="@+id/mycontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="180dp"
+            android:textSize="20sp"
+            android:text="@string/myactivitystringA"/>
+
+        <Button
+            android:id="@+id/mybutton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/mycontent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="130dp"
+            android:background="@mipmap/commentni6"
+            android:onClick="btonclik" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

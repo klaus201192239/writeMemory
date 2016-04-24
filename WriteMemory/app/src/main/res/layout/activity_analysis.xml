@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".AnalysisActivity" >
+
+
+    <RelativeLayout
+        android:id="@+id/sumlist_lv_one"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#CDCDCD" >
+
+        <Button
+            android:id="@+id/sumback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:background="@mipmap/wm_back2"
+            android:onClick="btonclik" />
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/sumlist_lv_one"
+        android:scrollbars="none"
+        android:divider="#00000000">
+    </ListView>
+
+</RelativeLayout>

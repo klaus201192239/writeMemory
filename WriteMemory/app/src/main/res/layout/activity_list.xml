@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ListActivity" >
+
+    <!-- title -->
+
+    <RelativeLayout
+        android:id="@+id/list_lv_one"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#CDCDCD" >
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:background="@mipmap/wm_back2"
+            android:onClick="btonclik" />
+
+        <Button
+            android:id="@+id/showSum"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/shareimg"
+            android:onClick="btonclik" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/list_lv_two"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/list_lv_one"
+        android:layout_height="45dp"
+        android:background="#2D95C2" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:text="只显示重大事情" />
+
+        <Button
+            android:id="@+id/list_import"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/shareimg"
+            android:onClick="btonclik" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/list_lv_two"
+        android:scrollbars="none"
+        android:divider="#00000000">
+    </ListView>
+
+</RelativeLayout>
