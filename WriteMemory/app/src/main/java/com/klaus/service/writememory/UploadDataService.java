@@ -4,7 +4,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.IBinder;
+import android.util.Log;
+
 import com.klaus.util.writememory.DBHelper;
 import com.wilddog.client.Wilddog;
 import java.util.ArrayList;
@@ -27,8 +31,10 @@ public class UploadDataService extends Service {
 
         if (intent != null) {
 
-            uploadData();
-
+            boolean tagNet=jugeRegNet();
+            if(tagNet==true){
+                uploadData();
+            }
         }
         return super.onStartCommand(intent, flags, startId);
     }
@@ -42,12 +48,14 @@ public class UploadDataService extends Service {
         Cursor cur = dbhelper.selectInfo("select * from mything;");
         while (cur.moveToNext()) {
 
-            //  System.out.println("aa"+cur.getInt(0));
-            //  System.out.println("bb"+cur.getString(1));
-            //  System.out.println("cc"+cur.getString(2));
-            //  System.out.println("dd"+cur.getString(3));
-            //   System.out.println("ee" + cur.getInt(4));
-            //  System.out.println("ff" + cur.getInt(5));
+          //  Log.v("aa",String.valueOf(cur.getInt(0)));
+           // Log.v("bb",cur.getString(1));
+           // Log.v("cc",cur.getString(2));
+           // Log.v("dd",cur.getString(3));
+           // Log.v("ee" , String.valueOf(cur.getInt(4)));
+           // Log.v("ff" ,String.valueOf(cur.getInt(5)));
+
+
 
             Map<String,String> map=new HashMap<String,String>();
             map.put("id", cur.getInt(0)+"");
@@ -63,6 +71,8 @@ public class UploadDataService extends Service {
         dbhelper.closeDB();
 
 
+
+
         Map<String,List> mapSum=new HashMap<String,List>();
         mapSum.put("memorysum",list);
 
@@ -73,6 +83,7 @@ public class UploadDataService extends Service {
 
         ref.setValue(mapSum);
 
+
         long nowTime= System.currentTimeMillis();
 
         SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
@@ -80,5 +91,19 @@ public class UploadDataService extends Service {
         editor.putLong("UploadTime", nowTime);
         editor.commit();
 
+
+
+
+    }
+
+
+    private Boolean jugeRegNet() {
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        if (info != null) {
+            return true;
+        }
+            return false;
     }
 }
