@@ -38,6 +38,9 @@
             android:enabled="true"
             android:exported="false" >
         </service>
+
+        <activity android:name=".LogonActivity" >
+        </activity>
     </application>
 
 </manifest>

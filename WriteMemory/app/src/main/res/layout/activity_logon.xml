@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.klaus.activity.writememory.LogonActivity">
+
+    <RelativeLayout
+        android:id="@+id/logon_lv_one"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#CDCDCD" >
+
+        <Button
+            android:id="@+id/logonback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:background="@mipmap/wm_back2"
+            android:onClick="btonclik" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/logon_lv_two"
+        android:layout_width="match_parent"
+        android:layout_below="@id/logon_lv_one"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/logon_img1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50dp"
+            android:src="@mipmap/wm_back2"/>
+
+        <EditText
+            android:id="@+id/logonusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/logon_img1"
+            android:layout_marginLeft="8dp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/logon_lv_three"
+        android:layout_width="match_parent"
+        android:layout_below="@id/logon_lv_two"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/logon_img2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50dp"
+            android:src="@mipmap/wm_back2"/>
+
+        <EditText
+            android:id="@+id/logonpwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/logon_img2"
+            android:layout_marginLeft="8dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/logonsubmit"
+        android:layout_below="@id/logon_lv_three"
+        android:layout_marginTop="50dp"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/wm_back2"
+        android:onClick="btonclik" />
+
+</RelativeLayout>

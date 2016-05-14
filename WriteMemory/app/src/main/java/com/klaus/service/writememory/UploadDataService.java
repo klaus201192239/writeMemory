@@ -7,8 +7,6 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.IBinder;
-import android.util.Log;
-
 import com.klaus.util.writememory.DBHelper;
 import com.wilddog.client.Wilddog;
 import java.util.ArrayList;
