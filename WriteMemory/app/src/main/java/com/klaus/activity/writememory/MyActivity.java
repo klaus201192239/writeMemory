@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,6 +80,25 @@ public class MyActivity extends AppCompatActivity {
         }
 
 
+        if(view.getId()==R.id.showlogon){
+
+
+            SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
+            String user=setting.getString("UserName", null);
+
+            if(user==null) {
+
+                Intent intent = new Intent(MyActivity.this, LogonActivity.class);
+                startActivity(intent);
+
+            }else{
+
+                Toast.makeText(getApplicationContext(), "您已经绑定了账号～", Toast.LENGTH_SHORT).show();
+            }
+
+            return ;
+        }
+
         if(view.getId()==R.id.mybutton){
 
             SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
@@ -116,17 +136,19 @@ public class MyActivity extends AppCompatActivity {
         if(WriteDownState==1){
 
             //换背景图片
-            RelativeLayout RL=(RelativeLayout)findViewById(R.id.RLlayout2);
-            RL.setBackgroundResource(R.mipmap.guide2);
+     //       RelativeLayout RL=(RelativeLayout)findViewById(R.id.RLlayout2);
+      //      RL.setBackgroundResource(R.mipmap.guide2);
 
 
             //换文字信息换按钮图片
-            TextView textview=(TextView)findViewById(R.id.mycontent);
-            textview.setText("每一次回忆");
+          //  TextView textview=(TextView)findViewById(R.id.mycontent);
+           // textview.setText("每一次回忆");
 
             //换按钮图片
-            Button button=(Button)findViewById(R.id.mybutton);
-            button.setBackgroundResource(R.mipmap.commentni9);
+            ImageView button=(ImageView)findViewById(R.id.mainimg);
+            button.setImageResource(R.mipmap.mainimg);
+
+           // button.setBackgroundResource(R.mipmap.commentni9);
 
         }
 

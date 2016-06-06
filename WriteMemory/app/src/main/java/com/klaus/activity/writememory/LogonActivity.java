@@ -1,31 +1,32 @@
 package com.klaus.activity.writememory;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.klaus.bean.writememory.User;
+import com.klaus.util.writememory.DBHelper;
 import com.wilddog.client.DataSnapshot;
 import com.wilddog.client.ValueEventListener;
 import com.wilddog.client.Wilddog;
 import com.wilddog.client.WilddogError;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+import android.os.Handler;
+import android.os.Message;
 
 public class LogonActivity extends AppCompatActivity {
 
     private List<User> userList=new ArrayList<User>();
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class LogonActivity extends AppCompatActivity {
             String pwdString=pwd.getText().toString().trim();
 
             if(userString==null||userString.length()==0||pwdString==null||pwdString.length()==0){
+
                 Toast.makeText(getApplicationContext(), "用户名密码不能为空", Toast.LENGTH_SHORT).show();
                 return ;
 
@@ -93,11 +95,9 @@ public class LogonActivity extends AppCompatActivity {
                 editor.putString("UserName", userString);
                 editor.commit();
 
+                updateLocalDB(userString);
 
-
-                Toast.makeText(getApplicationContext(), "用户名密码不能为空", Toast.LENGTH_SHORT).show();
-
-                finish();
+               // finish();
 
                 return ;
 
@@ -200,5 +200,66 @@ public class LogonActivity extends AppCompatActivity {
         return "";
     }
 
+
+    private void updateLocalDB(String userName){
+
+        progressDialog = ProgressDialog.show(LogonActivity.this, "", "正在同步数据，请稍后～！");
+
+        Wilddog.setAndroidContext(this);
+
+        Wilddog ref = new Wilddog("https://wild-snake-96493.wilddogio.com/android/writememory/"+userName);
+
+        ref.addValueEventListener(new ValueEventListener(){
+            public void onDataChange(DataSnapshot snapshot) {
+
+                long intemT= snapshot.getChildrenCount();
+
+                DBHelper dbhelper = new DBHelper(LogonActivity.this);
+                dbhelper.CreatOrOpen("writememory");
+
+                dbhelper.excuteInfo("delete from mything;");
+
+                for(int i=0;i<intemT;i++){
+
+                    int idd= Integer.parseInt(snapshot.child(i+"").child("id").getValue().toString());
+                    String title=snapshot.child(i+"").child("title").getValue().toString();
+                    String starttime=snapshot.child(i+"").child("starttime").getValue().toString();
+                    String endtime=snapshot.child(i+"").child("endtime").getValue().toString();
+                    int pride= Integer.parseInt(snapshot.child(i + "").child("pride").getValue().toString());
+                    int important= Integer.parseInt(snapshot.child(i+"").child("important").getValue().toString());
+
+                    dbhelper.excuteInfo("insert into mything values('"+idd+"','"+title+"','" +starttime+ "','"+endtime+"','"+pride+"','"+important+"')");
+
+                }
+
+                dbhelper.closeDB();
+
+                Message msg_listData = new Message();
+                msg_listData.what =0;
+                handler.sendMessage(msg_listData);
+
+            }
+
+            public void onCancelled(WilddogError error) {
+                if(error != null){
+                    //   System.out.println(error.getCode());
+                }
+            }
+        });
+
+    }
+
+
+    private Handler handler = new Handler() {
+        public void handleMessage(Message message) {
+            switch (message.what) {
+                case 0:
+                    progressDialog.dismiss(); //关闭进度条
+                    Toast.makeText(getApplicationContext(), "数据同步完毕～", Toast.LENGTH_SHORT).show();
+                    finish();
+                    break;
+            }
+        }
+    };
 
 }

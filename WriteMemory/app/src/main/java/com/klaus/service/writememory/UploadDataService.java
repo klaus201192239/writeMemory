@@ -39,6 +39,21 @@ public class UploadDataService extends Service {
 
     private void uploadData(){
 
+
+        SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
+
+        //  Map<String,List> mapSum=new HashMap<String,List>();
+        // mapSum.put("memorysum", list);
+
+        //  mapSum.put(setting.getString("UserName", "klaus"), list);
+
+        String user=setting.getString("UserName", "laklausla");
+
+        if(user.equals("laklausla")){
+            return ;
+        }
+
+
         List<Map> list = new ArrayList<Map>();
 
         DBHelper dbhelper = new DBHelper(this);
@@ -71,20 +86,18 @@ public class UploadDataService extends Service {
 
 
 
-        Map<String,List> mapSum=new HashMap<String,List>();
-        mapSum.put("memorysum",list);
-
-
         Wilddog.setAndroidContext(this);
 
-        Wilddog ref = new Wilddog("https://wild-snake-96493.wilddogio.com/android/writememory");
+        Wilddog ref = new Wilddog("https://wild-snake-96493.wilddogio.com/android/writememory/"+user);
 
-        ref.setValue(mapSum);
+        //ref.setValue(mapSum);
+        ref.setValue(list);
+
 
 
         long nowTime= System.currentTimeMillis();
 
-        SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
+       // SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
         SharedPreferences.Editor editor = setting.edit();
         editor.putLong("UploadTime", nowTime);
         editor.commit();

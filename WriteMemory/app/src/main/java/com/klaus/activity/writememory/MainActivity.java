@@ -7,13 +7,19 @@ import android.os.Handler;
 import android.os.Message;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.klaus.bean.writememory.User;
 import com.klaus.util.writememory.DBHelper;
+import com.wilddog.client.DataSnapshot;
+import com.wilddog.client.ValueEventListener;
 import com.wilddog.client.Wilddog;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.klaus.service.writememory.UploadDataService;
+import com.wilddog.client.WilddogError;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences setting = getSharedPreferences("writememory", MODE_PRIVATE);
         int RegisterFirst=setting.getInt("RegisterFirst", -1);
+
+
 
         //首次使用
         if(RegisterFirst==-1){
@@ -155,8 +163,5 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
 
     }
-
-
-
 
 }
