@@ -14,11 +14,11 @@
 
         <Button
             android:id="@+id/logonback"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="8dp"
             android:background="@mipmap/wm_back2"
             android:onClick="btonclik" />
 
@@ -39,9 +39,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:textColor="#FFFFFF"
-            android:textSize="40sp"
+            android:textSize="28sp"
             android:text="@string/app_name"/>
 
 
@@ -49,22 +49,28 @@
             android:id="@+id/logon_lv_twoo"
             android:layout_width="match_parent"
             android:layout_below="@id/mycontenttt"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content">
 
-            <ImageView
+          <!--  <ImageView
                 android:id="@+id/logon_img1"
-                android:layout_width="220dp"
+                android:layout_width="260dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:scaleType="fitXY"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/regisu"/>
+                android:src="@mipmap/regisu"/>-->
 
             <EditText
                 android:id="@+id/logonusername"
-                android:layout_width="150dp"
+                android:layout_width="260dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
+                android:paddingLeft="55dp"
+                android:hint="请输入用户名"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:background="@mipmap/regisu"
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
@@ -78,29 +84,35 @@
             android:layout_height="wrap_content">
 
 
-            <ImageView
+           <!-- <ImageView
                 android:id="@+id/logon_img2"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
+                android:layout_width="260dp"
+                android:layout_height="43dp"
                 android:layout_marginTop="20dp"
                 android:scaleType="fitXY"
                 android:layout_centerHorizontal="true"
                 android:src="@mipmap/regpa"/>
-
+-->
             <EditText
                 android:id="@+id/logonpwd"
-                android:layout_width="150dp"
+                android:layout_width="260dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
+                android:paddingLeft="55dp"
+                android:hint="请输入密码"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:background="@mipmap/regpa"
                 android:layout_centerHorizontal="true" />
+
 
         </RelativeLayout>
 
         <Button
             android:id="@+id/logonsubmit"
             android:layout_below="@id/logon_lv_three"
-            android:layout_marginTop="50dp"
-            android:layout_width="170dp"
+            android:layout_marginTop="55dp"
+            android:layout_width="220dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:background="@mipmap/bindfinish"

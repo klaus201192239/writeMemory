@@ -2,39 +2,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#32384b"
     tools:context=".EndActivity" >
+
+
+    <ImageView
+        android:id="@+id/endwite"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/endwit"/>
+
+
+    <TextView
+        android:id="@+id/ething_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="您即将要做的事情"
+        android:textColor="#a9a9a9"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/ething_content"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true"
         android:background="@mipmap/noticeinput"
         android:hint="您即将要做的事情～"
         android:paddingLeft="6dp"
         android:textColor="#a9a9a9"
         android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/ething_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ething_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:text="您即将要做的事情～"
-        android:textColor="#a9a9a9"
-        android:textSize="15sp" />
+
 
     <CheckBox
         android:id="@+id/ething_pride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ething_time"
+        android:layout_below="@id/endwite"
         android:layout_marginLeft="22dp"
         android:checked="true"
         android:text="对事情结果满意"
@@ -55,29 +64,19 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@id/ething_important"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="245dp"
         android:layout_marginTop="30dp"
-        android:layout_span="2"
-        android:alpha="0.8"
-        android:background="#E5E5E5"
-        android:onClick="btonclick"
-        android:text="保存本次记录"
-        android:textColor="#FFCC33"
-        android:textSize="16sp" />
+        android:background="@mipmap/endsave"
+        android:onClick="btonclick" />
 
     <Button
         android:id="@+id/ething_no"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_below="@id/ething_important"
-        android:layout_marginLeft="220dp"
+        android:layout_marginLeft="125dp"
         android:layout_marginTop="30dp"
-        android:layout_span="2"
-        android:alpha="0.8"
-        android:background="#E5E5E5"
-        android:onClick="btonclick"
-        android:text="取消本次记录"
-        android:textColor="#FFCC33"
-        android:textSize="16sp" />
+        android:background="@mipmap/enddele"
+        android:onClick="btonclick" />
 
 </RelativeLayout>
