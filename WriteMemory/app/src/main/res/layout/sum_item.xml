@@ -1,41 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:paddingBottom="10dp" >
+    android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/allthingTime"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/anaro"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
+        android:background="#32384b"
+        android:paddingBottom="10dp">
 
-    <TextView
-        android:id="@+id/allthingSum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/allthingTime"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/allthingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="hahah"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:id="@+id/allthingGood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/allthingSum"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="1dp"/>
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/allthingImportant"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/allthingGood"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_below="@id/anaro"
+        android:paddingBottom="10dp"
+        android:background="#383e54">
+
+
+        <TextView
+            android:id="@+id/allthingSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="hahah"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/allthingGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/allthingSum"
+            android:layout_marginLeft="100dp"
+            android:text="hahah"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/allthingImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/allthingGood"
+            android:text="hahah"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="2dp"/>
+
+    </RelativeLayout>
+
+
+
+
 
 
 </RelativeLayout>

@@ -2,50 +2,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#32384b"
     tools:context=".StartActivity" >
+
+    <ImageView
+        android:id="@+id/startwite"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/endwit"/>
+
+    <TextView
+        android:id="@+id/sthing_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="您即将要做..."
+        android:textColor="#a9a9a9"
+        android:textSize="20sp" />
+
 
     <EditText
         android:id="@+id/sthing_content"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="您即将要做的事情～"
+        android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true"
         android:background="@mipmap/noticeinput"
-        android:textColor="#a9a9a9"
+        android:hint="您即将要做的事情～"
         android:paddingLeft="6dp"
+        android:textColor="#a9a9a9"
         android:textSize="15sp" />
 
     <Button
-        android:id="@+id/sthing_ok"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/sthing_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="100dp"
-        android:background="#E5E5E5"
-        android:layout_span="2"
-        android:alpha="0.8"
-        android:onClick="btonclick"
-        android:text="确   定"
-        android:textColor="#FFCC33"
-        android:textSize="16sp" />
+        android:id="@+id/sthing_no"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/startwite"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentLeft="true"
+        android:background="@mipmap/sgiveup"
+        android:onClick="btonclick" />
 
     <Button
-        android:id="@+id/sthing_no"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/sthing_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="220dp"
-        android:background="#E5E5E5"
-        android:layout_span="2"
-        android:alpha="0.8"
-        android:onClick="btonclick"
-        android:text="取  消"
-        android:textColor="#FFCC33"
-        android:textSize="16sp" />
+        android:id="@+id/sthing_ok"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/startwite"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:background="@mipmap/ssive"
+        android:onClick="btonclick" />
 
 </RelativeLayout>
