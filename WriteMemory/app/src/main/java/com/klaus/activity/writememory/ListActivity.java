@@ -93,7 +93,7 @@ public class ListActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.list_list);
         footerView = inflater.inflate(R.layout.footer, null);
         relativelayout=(RelativeLayout)footerView.findViewById(R.id.footerrl);
-        relativelayout.setBackgroundColor(Color.BLUE);
+     //   relativelayout.setBackgroundColor(Color.BLUE);
         mListView.addFooterView(footerView);
         footerView.setOnClickListener(new OnClickListener() {
             @Override
@@ -285,8 +285,9 @@ public class ListActivity extends AppCompatActivity {
 
                 cache.good_title = (TextView) convertView.findViewById(R.id.goodThing);
                 cache.good_time = (TextView) convertView.findViewById(R.id.goodTime);
-                cache.bad_title = (TextView) convertView.findViewById(R.id.badThing);
-                cache.bad_time = (TextView) convertView.findViewById(R.id.badTime);
+               // cache.bad_title = (TextView) convertView.findViewById(R.id.badThing);
+                //cache.bad_time = (TextView) convertView.findViewById(R.id.badTime);
+                cache.l_imga = (ImageView) convertView.findViewById(R.id.listImagea);
                 cache.l_img = (ImageView) convertView.findViewById(R.id.listImage);
 
                 convertView.setTag(cache);
@@ -301,27 +302,38 @@ public class ListActivity extends AppCompatActivity {
 
             if(mypride==0){
 
-                cache.good_title.setVisibility(View.GONE);
-                cache.good_time .setVisibility(View.GONE);
-                cache.bad_title.setVisibility(View.VISIBLE);
-                cache.bad_time .setVisibility(View.VISIBLE);
+              //  cache.good_title.setVisibility(View.GONE);
+               // cache.good_time .setVisibility(View.GONE);
+               // cache.bad_title.setVisibility(View.VISIBLE);
+               // cache.bad_time .setVisibility(View.VISIBLE);
 
-                cache.bad_title.setText(list.get(position).title);
+             //   cache.bad_title.setText(list.get(position).title);
+             //   SimpleDateFormat sdf=new SimpleDateFormat("MM-dd HH:mm");
+              //  cache.bad_time.setText(sdf.format(Utils.longToTime(Long.parseLong(list.get(position).startTime)))+"~"+sdf.format(Utils.longToTime(Long.parseLong(list.get(position).endTime))));
+              //  cache.l_img.setImageResource(R.mipmap.commentni6);
+
+
+                cache.good_title.setText(list.get(position).title);
+                cache.good_title.setTextColor(Color.parseColor("#BACAC6"));
+              //  cache.good_title.setText("ffsdfgdgdfgdfhbfhbfghbgfhfhgfhgfhfhfghfhgfhhgfhfh");
                 SimpleDateFormat sdf=new SimpleDateFormat("MM-dd HH:mm");
-                cache.bad_time.setText(sdf.format(Utils.longToTime(Long.parseLong(list.get(position).startTime)))+"~"+sdf.format(Utils.longToTime(Long.parseLong(list.get(position).endTime))));
-                cache.l_img.setImageResource(R.mipmap.commentni6);
+                cache.good_time.setText(sdf.format(Utils.longToTime(Long.parseLong(list.get(position).startTime)))+"~"+sdf.format(Utils.longToTime(Long.parseLong(list.get(position).endTime))));
+                cache.l_imga.setImageResource(R.mipmap.listbadb);
+                cache.l_img.setImageResource(R.mipmap.listpointp);
 
             }
             else{
-                cache.good_title.setVisibility(View.VISIBLE);
-                cache.good_time .setVisibility(View.VISIBLE);
-                cache.bad_title.setVisibility(View.GONE);
-                cache.bad_time .setVisibility(View.GONE);
+            //    cache.good_title.setVisibility(View.VISIBLE);
+            //    cache.good_time .setVisibility(View.VISIBLE);
+           ///     cache.bad_title.setVisibility(View.GONE);
+            //    cache.bad_time .setVisibility(View.GONE);
 
                 cache.good_title.setText(list.get(position).title);
+                cache.good_title.setTextColor(Color.parseColor("#FFFFFF"));
                 SimpleDateFormat sdf=new SimpleDateFormat("MM-dd HH:mm");
-                cache.good_time.setText(sdf.format(Utils.longToTime(Long.parseLong(list.get(position).startTime)))+"~"+sdf.format(Utils.longToTime(Long.parseLong(list.get(position).endTime))));
-                cache.l_img.setImageResource(R.mipmap.commentni9);
+                cache.good_time.setText(sdf.format(Utils.longToTime(Long.parseLong(list.get(position).startTime))) + "~" + sdf.format(Utils.longToTime(Long.parseLong(list.get(position).endTime))));
+                cache.l_imga.setImageResource(R.mipmap.listgoodb);
+                cache.l_img.setImageResource(R.mipmap.listpointq);
             }
 
             return convertView;
@@ -331,9 +343,10 @@ public class ListActivity extends AppCompatActivity {
 
             public TextView good_title;
             public TextView good_time;
-            public TextView bad_title;
-            public TextView bad_time;
+        //    public TextView bad_title;
+         //   public TextView bad_time;
             public ImageView l_img;
+            public ImageView l_imga;
         }
     }
 

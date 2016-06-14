@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#32384b"
     tools:context=".ListActivity" >
 
     <!-- title -->
@@ -11,15 +11,15 @@
         android:id="@+id/list_lv_one"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#CDCDCD" >
+        android:background="#383e54" >
 
         <Button
             android:id="@+id/back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:background="@mipmap/wm_back2"
             android:onClick="btonclik" />
 
@@ -27,10 +27,10 @@
             android:id="@+id/showSum"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
             android:layout_alignParentRight="true"
-            android:background="@mipmap/shareimg"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/listright"
             android:onClick="btonclik" />
 
     </RelativeLayout>
@@ -40,26 +40,26 @@
         android:layout_width="match_parent"
         android:layout_marginTop="8dp"
         android:layout_below="@id/list_lv_one"
-        android:layout_height="45dp"
-        android:background="#2D95C2" >
+        android:layout_height="45dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="48dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="55dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
             android:textSize="20sp"
+            android:textColor="#FFFFFF"
             android:text="只显示重大事情" />
 
         <Button
             android:id="@+id/list_import"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentRight="true"
-            android:background="@mipmap/shareimg"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="13dp"
+            android:layout_alignParentLeft="true"
+            android:background="@mipmap/listimpp"
             android:onClick="btonclik" />
 
     </RelativeLayout>
@@ -68,7 +68,6 @@
         android:id="@+id/list_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/list_lv_two"
         android:scrollbars="none"

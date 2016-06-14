@@ -1,38 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_height="80dp" >
 
     <ImageView
         android:id="@+id/listImage"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="9dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="9dp"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/commentni6" />
+        android:src="@mipmap/listpointq" />
+
+    <ImageView
+        android:id="@+id/listImagea"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/listImage"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@mipmap/listbadb" />
 
     <TextView
         android:id="@+id/goodThing"
-        android:layout_width="wrap_content"
+        android:layout_width="215dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/listImage"
+        android:text="hahahgfdgdffdaffffffffffffffffffffffffffffffffffffffffffffff"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="5dp"/>
-
 
     <TextView
         android:id="@+id/goodTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="35dp"/>
+        android:layout_alignParentBottom="true"
+        android:textColor="#FFFFFF"
+        android:text="hahahaddddddddd"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/listImage"
+        android:layout_marginBottom="5dp"/>
 
-
-    <TextView
+    <!--<TextView
         android:id="@+id/badThing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
+        android:text="hahaha"
         android:layout_marginTop="5dp"/>
 
 
@@ -42,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="35dp"/>
+        android:text="hahaha"
+        android:layout_marginTop="35dp"/>-->
 
 </RelativeLayout>
